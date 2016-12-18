@@ -1,0 +1,7 @@
+gmp-*
+mpfr-*
+boost_*
+
+arm*/share
+mips*/share
+x86*/share

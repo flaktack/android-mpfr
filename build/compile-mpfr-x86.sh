@@ -16,8 +16,8 @@ BASE_CFLAGS='-O2 -g -pedantic -Wa,--noexecstack -fomit-frame-pointer -ffunction-
 
 # x86, CFLAGS set according to 'CPU Arch ABIs' in the r8c documentation
 export CFLAGS="${BASE_CFLAGS} -fstack-protector -march=i686 -mtune=intel -mssse3 -mfpmath=sse -m32"
-gmp_make_compile_install x86 "x86/atom/sse2 x86/atom/mmx x86/atom x86/mmx x86 generic" --host=i686-linux-android
+mpfr_make_compile_install x86 --host=i686-linux-android
 
 # x86_64, CFLAGS set according to 'CPU Arch ABIs' in the NDK documentation, LDFLAGS as observed from ndk-build
 export CFLAGS="${BASE_CFLAGS} -fstack-protector-strong -march=x86-64 -msse4.2 -mpopcnt -m64 -mtune=intel"
-gmp_make_compile_install x86_64 "x86_64/pentium4 x86_64/fastsse x86_64/k8 x86_64 generic" --host=x86_64-linux-android
+mpfr_make_compile_install x86_64 --host=x86_64-linux-android

@@ -16,12 +16,10 @@ BASE_CFLAGS='-O2 -g -pedantic -fomit-frame-pointer -Wa,--noexecstack -fno-strict
 
 # mips CFLAGS not specified in 'CPU Arch ABIs' in the NDK documentation
 export CFLAGS="${BASE_CFLAGS}"
-gmp_make_compile_install mips "mips32 generic" --host=mipsel-linux-android
+mpfr_make_compile_install mips --host=mipsel-linux-android
 
 # mips64 CFLAGS not specified in 'CPU Arch ABIs' in the NDK documentation
 export CFLAGS="${BASE_CFLAGS}"
-# Ugly hack: delete incompatible assembly code from MPN directory
-rm -f mpn/mips64/{addmul_1.asm,submul_1.asm,mul_1.asm,sqr_diagonal.asm,umul.asm}
-gmp_make_compile_install mips64 "mips64 generic" --host=mips64el-linux-android
+mpfr_make_compile_install mips64 --host=mips64el-linux-android
 
 exit 0
